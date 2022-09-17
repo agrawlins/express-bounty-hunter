@@ -1,0 +1,129 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+  
+}
+
+body {
+  background: url("https://www.thedentedhelmet.com/forums/attachments/screenshot0186-jpg.10867/");
+  background-size: cover;
+  background-color: black;
+}
+
+h1{
+  margin-left: 40%;
+}
+
+.header {
+  color: yellow;
+}
+
+.cockpit-HUD {
+  display: flex;
+  flex-direction: row;
+  height: 750px;
+  width: 50%;
+  opacity: 75%;
+  background-color: rgb(63, 84, 143);
+  border: 15px solid aqua;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px 25%;
+}
+
+.bounty-add {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.bounty-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bounty-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 10px;
+  overflow: auto;
+}
+
+.bounty-container::-webkit-scrollbar {
+  display: none;
+}
+
+.bounty {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid aqua;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+form {
+  border: 5px solid aqua;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+}
+
+form > div {
+  margin: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  background: none;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+button {
+  padding: 5px;
+  background: none;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.ALIVE-btn {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.DEAD-btn {
+  background-color: firebrick;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.JEDI-btn {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.SITH-btn {
+  background-color: firebrick;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.edit-btn {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.delete-btn {
+  background-color: firebrick;
+  color: whitesmoke;
+}

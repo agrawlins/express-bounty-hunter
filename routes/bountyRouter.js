@@ -6,57 +6,72 @@ const bounties = [
     {
         firstName: "Anakin",
         lastName: "Skywalker",
-        living: true,
+        living: "ALIVE",
         bounty: 150,
-        type: "sith",
+        type: "SITH",
         _id: uuid4()
     },
     {
         firstName: "Plo",
         lastName: "Koon",
-        living: false,
+        living: "DEAD",
         bounty: 100,
-        type: "jedi",
+        type: "JEDI",
         _id: uuid4()
     },
     {
         firstName: "Jar-Jar",
         lastName: "Binks",
-        living: true,
+        living: "ALIVE",
         bounty: 50,
-        type: "sith",
+        type: "SITH",
         _id: uuid4()
     },
     {
         firstName: "Ahsoka",
         lastName: "Tano",
-        living: true,
+        living: "ALIVE",
         bounty: 250,
-        type: "jedi",
+        type: "JEDI",
         _id: uuid4()
     },
     {
         firstName: "Obi-Wan",
         lastName: "Kenobi",
-        living: true,
+        living: "ALIVE",
         bounty: 500,
-        type: "jedi",
+        type: "JEDI",
         _id: uuid4()
     }
 ]
 
 //ROUTES
-bountyRouter.route("/")
-    .get((req, res) => {
+bountyRouter.get("/", (req, res) => {
         res.send(bounties)
     })
-    .post((req, res) => {
-        const newBounty = req.body
-        newBounty._id = uuid4()
-        console.log(newBounty)
-        bounties.push(newBounty)
-        res.send(`Successfully added ${newBounty.firstName} ${newBounty.lastName} to the hitlist!`)
-    })
+
+bountyRouter.post("/", (req, res) => {
+    const newBounty = req.body
+    newBounty._id = uuid4()
+    console.log(newBounty)
+    bounties.push(newBounty)
+    res.send(`Successfully added ${newBounty.firstName} ${newBounty.lastName} to the hitlist!`)
+})
+
+bountyRouter.put("/:bountyId", (req, res) => {
+    const bountyId = req.params.bountyId
+    const updateObject = req.body
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
+    const updatedBounty = Object.assign(bounties[bountyIndex], updateObject)
+    res.send(updatedBounty)
+})
+
+bountyRouter.delete("/:bountyId", (req, res) => {
+    const bountyId = req.params.bountyId
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
+    bounties.splice(bountyIndex, 1)
+    res.send(`Deleted target from the hitlist`)
+})
 
 //GET
 
