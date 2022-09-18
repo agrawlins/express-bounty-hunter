@@ -9,23 +9,22 @@ const AddBountyForm = (props) => {
 
 
     const toggleLiving = (e) => {
-        handleChange(e)
         setAlive(prevLife => prevLife === "ALIVE" ? "DEAD" : "ALIVE")
+        handleChange(e)
     }
 
     const toggleForceType = (e) => {
-        handleChange(e)
         setForceType(prevForce => prevForce === "JEDI" ? "SITH" : "JEDI")
+        handleChange(e)
     }
 
     const handleChange = (e) => {
-        e.preventDefault()
         const {name, value} = e.target
         setInputs(prevInputs => ({...prevInputs, [name]: value}))
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         submit(inputs, _id)
         setInputs(initInputs)
     }
@@ -68,7 +67,7 @@ const AddBountyForm = (props) => {
                 className={`${alive}-btn`}
                 type="button"
                 name="living"
-                value={alive.toUpperCase()}
+                value={alive}
                 onClick={toggleLiving}
             />
         </div>
@@ -78,7 +77,7 @@ const AddBountyForm = (props) => {
                 className={`${forceType}-btn`}
                 type="button"
                 name="type"
-                value={forceType.toUpperCase()}
+                value={forceType}
                 onClick={toggleForceType}
             />
         </div>

@@ -7,6 +7,8 @@ const AddBountyForm = (props) => {
     const [alive, setAlive] = useState(inputs.living)
     const [forceType, setForceType] = useState(inputs.type)
 
+    //
+
     const toggleLiving = (e) => {
         handleChange(e)
         setAlive(prevLife => prevLife === "ALIVE" ? "DEAD" : "ALIVE")
