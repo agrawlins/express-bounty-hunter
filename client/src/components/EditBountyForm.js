@@ -62,6 +62,7 @@ const AddBountyForm = (props) => {
                 required
             />
         </div>
+        <h4 className="warning">PLEASE USE THE OPPOSITE<br/>OF WHAT YOU INTEND<br/> FOR THESE BUTTONS </h4>
         <div>
             <label>DEAD/ALIVE </label>
             <input

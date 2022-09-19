@@ -127,3 +127,13 @@ button {
   background-color: firebrick;
   color: whitesmoke;
 }
+
+.warning {
+  padding: 5px;
+  background: none;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  color: rgb(255, 0, 0);
+  font-weight: bolder;
+  font-size: larger;
+}
