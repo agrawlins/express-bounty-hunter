@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const DATABASE_URL = require('dotenv')
+require('dotenv').config()
 
 //Middleware
 app.use(express.json())
@@ -10,7 +10,7 @@ app.use(morgan('dev'))
 
 //Connect to Database
 mongoose.connect(
-    "mongodb+srv://MerrimanLyon:13qeadzc%21%23QEADZC@cluster0.xqosq.mongodb.net/bountyhunterdb?retryWrites=true&w=majority",
+    process.env.DATABASE_URL,
     () => console.log("Connected to the Database")
 )
 

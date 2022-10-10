@@ -49,7 +49,7 @@ bountyRouter.get("/search/type", (req, res, next) => {
 })
 
 //PUT ONE
-bountyRouter.put("/:bountyId", (req, res) => {
+bountyRouter.put("/:bountyId", (req, res, next) => {
     Bounty.findOneAndUpdate(
         {_id: req.params.bountyId},
         req.body,
