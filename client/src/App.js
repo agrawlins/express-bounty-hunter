@@ -37,6 +37,12 @@ const App = () => {
     .catch(err => console.log(err))
   }
 
+  // const searchBounties = (input, dropdownCategory) => {
+        //bounties.find(
+            // input && dropdownCategory
+        //)
+  // }
+
   useEffect(() => {
     getBounties()
   }, [])
@@ -51,6 +57,8 @@ const App = () => {
           />
         </div>
         <div className="bounty-container">
+          // <input type="text" placeholder="search"></input>
+
           {
           bounties.map(bounty => 
             <Bounty

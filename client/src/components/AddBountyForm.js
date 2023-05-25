@@ -2,11 +2,16 @@ import React, { useState} from "react";
 
 const AddBountyForm = (props) => {
     const {firstName, lastName, living, bounty, type, submit, btnText, _id} = props
-    const initInputs = {firstName: firstName || "", lastName: lastName || "", living: living || "", bounty: bounty || "", type: type || ""}
+    const initInputs = {
+        firstName: firstName || "",
+        lastName: lastName || "",
+        living: living || "",
+        bounty: bounty || "",
+        type: type || ""
+    }
     const [inputs, setInputs] = useState(initInputs)
     const [alive, setAlive] = useState("ALIVE")
     const [forceType, setForceType] = useState("JEDI")
-
 
     const toggleLiving = (e) => {
         setAlive(prevLife => prevLife === "ALIVE" ? "DEAD" : "ALIVE")
